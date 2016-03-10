@@ -1,0 +1,27 @@
+{
+  "name": "phunctional/core",
+  "type": "lib",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Martin Miklós",
+      "email": "miklos.martin@gmail.com"
+    }
+  ],
+  "require": {
+    "php": ">=7.0"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "~5.2"
+  },
+  "autoload": {
+    "psr-4": {
+      "Phunctional\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Phunctional\\Tests\\": "tests/"
+    }
+  }
+}
