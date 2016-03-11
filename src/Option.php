@@ -4,7 +4,10 @@ namespace Phunctional;
 
 use Phunctional\Option\EmptyOptionException;
 
-
+/**
+ * @method Option map(callable $f)
+ * @method Option flatMap(callable $f)
+ */
 interface Option/*[T]*/ extends Functor/*[T]*/, Monad/*[T]*/
 {
     public function isEmpty(): bool;

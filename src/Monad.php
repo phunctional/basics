@@ -9,5 +9,5 @@ interface Monad/*[T]*/
      *
      * @return Monad[U]
      */
-    public function flatMap(callable $f): Monad;
+    public function flatMap(callable $f);
 }

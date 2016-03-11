@@ -2,8 +2,6 @@
 
 namespace Phunctional\Option;
 
-use Phunctional\Functor;
-use Phunctional\Monad;
 use Phunctional\Option;
 
 class Some implements Option
@@ -14,37 +12,26 @@ class Some implements Option
         $this->value = $value;
     }
 
-    public function map(callable $f): Functor
+    public function map(callable $f): Option
     {
         return new self($f($this->value));
     }
 
-    public function flatMap(callable $f): Monad
+    public function flatMap(callable $f): Option
     {
         return $f($this->value);
     }
 
-    /**
-     * @return boolean
-     */
     public function isEmpty(): bool
     {
         return false;
     }
 
-    /**
-     * @return mixed $value of type T
-     * @throws EmptyOptionException
-     */
     public function get()
     {
         return $this->value;
     }
 
-    /**
-     * @param mixed $value of type T
-     * @return $value of type T
-     */
     public function getOrElse($value)
     {
         return $this->value;

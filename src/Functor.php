@@ -9,5 +9,5 @@ interface Functor/*[T]*/
      *
      * @return Functor[U]
      */
-    public function map(callable $f): Functor;
+    public function map(callable $f);
 }
