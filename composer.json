@@ -1,6 +1,8 @@
 {
-  "name": "phunctional/core",
-  "type": "lib",
+  "name": "phunctional/basics",
+  "description": "Provides some core functional concepts expressed as interfaces and base test cases for implementations",
+  "keywords": ["functional programming", "functional", "functor", "monad", "monoid"],
+  "type": "library",
   "license": "MIT",
   "authors": [
     {
@@ -22,6 +24,11 @@
   "autoload-dev": {
     "psr-4": {
       "Phunctional\\Tests\\": "tests/"
+    }
+  },
+  "extra": {
+    "branch-alias": {
+      "dev-master": "1.0.x-dev"
     }
   }
 }
