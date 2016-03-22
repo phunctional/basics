@@ -22,7 +22,7 @@ class Composition
         });
     }
 
-    public function andThen($g)
+    public function andThen(callable $g)
     {
         return self::startWith($g)->compose($this->f);
     }
