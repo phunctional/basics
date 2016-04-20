@@ -32,6 +32,11 @@ class CompositionTest extends \PHPUnit_Framework_TestCase
         $composed = Composition::startWith($f)->compose($g)->compose($h)->andThen($h);
 
         $this->assertEquals($h($f($g($h($value)))), $composed($value));
+
+        $piped = Composition::pipe([$f, $g, $h]);
+        $chained = Composition::startWith($f)->andThen($g)->andThen($h);
+
+        $this->assertEquals($chained($value), $piped($value));
     }
 
     public function testMultipleArgs()

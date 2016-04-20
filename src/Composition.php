@@ -10,6 +10,15 @@ class Composition
         $this->f = $f;
     }
 
+    public static function pipe(array $fs)
+    {
+        return new self(function($value) use ($fs) {
+            return array_reduce($fs, function ($x, $f) {
+                return $f($x);
+            }, $value);
+        });
+    }
+
     public static function startWith(callable $f)
     {
         return new self($f);
